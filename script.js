@@ -10,6 +10,8 @@ function playGame()
    {
      playRound(getHumanChoice(), getComputerChoice());
    } 
+
+
 }
 
 function getComputerChoice()
@@ -46,30 +48,41 @@ function getHumanChoice()
 
 function playRound(humanChoice, computerChoice) {
   
-        if(humanChoice === computerChoice)
-        {
-            console.log('The game is tie.');
-        }
+    if(humanChoice === computerChoice)
+    {
+        console.log('The game is tie.');
+        console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+    }
 
-        else if (humanChoice === "rock" && computerChoice === "scissors")
-        {
-            console.log('You Win! rock beats scissors.');
-        }  
+    else if (humanChoice === "rock" && computerChoice === "scissors")
+    {
+        console.log('You Win! rock beats scissors.');
+        humanScore += 1;
+        console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+    }  
 
-        else if (humanChoice === "paper" && computerChoice === "rock")
-        {
-            console.log('You Win! paper beats rock.')
-        }
+    else if (humanChoice === "paper" && computerChoice === "rock")
+    {
+        console.log('You Win! paper beats rock.');
+        humanScore += 1;
+        console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+    }
 
-        else if(humanChoice === "scissors" && computerChoice === "paper")
-        {
-            console.log('You Win! scissors beats paper.')
-        }
+    else if(humanChoice === "scissors" && computerChoice === "paper")
+    {
+        console.log('You Win! scissors beats paper.');
+        humanScore += 1;
+        console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+    }
 
-        else
-        {
-            console.log(`You Lose! ${computerChoice} beats ${humanChoice}.` )
-        }
+    else
+    {
+        console.log(`You Lose! ${computerChoice} beats ${humanChoice}.` );
+        computerScore += 1;
+        console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+    }
+
+
 }
 
 
@@ -97,3 +110,4 @@ function running()
 
     playGame();
 }
+
