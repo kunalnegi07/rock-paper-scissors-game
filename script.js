@@ -6,13 +6,22 @@ running();
 
 function playGame()
 {
+
+
+
    for(i = 1; i<=5 ; i++)
    {
-     playRound(getHumanChoice(), getComputerChoice());
+
+    const humanPick = getHumanChoice();
+    const computerPick = getComputerChoice();
+
+     const gameOver = playRound(humanPick,computerPick);
 
    } 
 
-   declareResult();
+  declareResult();
+
+
 
 }
 
@@ -48,7 +57,8 @@ function getHumanChoice()
     return humanChoice.toLowerCase();
 }
 
-function playRound(humanChoice, computerChoice) {
+function playRound(humanChoice, computerChoice)
+ {
   
     if(humanChoice === computerChoice)
     {
@@ -91,7 +101,6 @@ function playRound(humanChoice, computerChoice) {
         console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
     }
 
-
 }
 
 
@@ -114,7 +123,7 @@ function running()
     else
     {
         console.log('Enter a valid input "y" or "n" ');
-        running();   
+        return running();   
     }
 
     playGame();
@@ -122,18 +131,18 @@ function running()
 
 function declareResult()
 {
-    if (humanScore>computerScore)
+    if(humanScore>computerScore)
     {
-        console.log('Hurrayyyyyy! You Won the game.')
+        console.log('Hurrayyyy! You Won the game.');
     }
 
-    else if (humanScore < computerScore)
+    else if(humanScore<computerScore)
     {
-        console.log('YOU LOST! Stupid.')
+        console.log('YOU LOST! Stupid');
     }
 
     else
     {
-        console.log('This game was tie.')
+        console.log('This game was a Tie.')
     }
 }
