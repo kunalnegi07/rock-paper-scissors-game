@@ -9,8 +9,10 @@ function playGame()
    for(i = 1; i<=5 ; i++)
    {
      playRound(getHumanChoice(), getComputerChoice());
+
    } 
 
+   declareResult();
 
 }
 
@@ -50,34 +52,41 @@ function playRound(humanChoice, computerChoice) {
   
     if(humanChoice === computerChoice)
     {
-        console.log('The game is tie.');
+        console.log('This round is tie.');
         console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
     }
 
     else if (humanChoice === "rock" && computerChoice === "scissors")
     {
-        console.log('You Win! rock beats scissors.');
+        console.log('You win! rock beats scissors.');
         humanScore += 1;
         console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
     }  
 
     else if (humanChoice === "paper" && computerChoice === "rock")
     {
-        console.log('You Win! paper beats rock.');
+        console.log('You win! paper beats rock.');
         humanScore += 1;
         console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
     }
 
     else if(humanChoice === "scissors" && computerChoice === "paper")
     {
-        console.log('You Win! scissors beats paper.');
+        console.log('You win! scissors beats paper.');
         humanScore += 1;
         console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
     }
 
+    else if(humanChoice !== "rock" || humanChoice !== "scissors" || humanChoice !== "paper")
+    {
+        console.log('Invalid round');
+        console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+        
+    }
+
     else
     {
-        console.log(`You Lose! ${computerChoice} beats ${humanChoice}.` );
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}.` );
         computerScore += 1;
         console.log(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
     }
@@ -111,3 +120,20 @@ function running()
     playGame();
 }
 
+function declareResult()
+{
+    if (humanScore>computerScore)
+    {
+        console.log('Hurrayyyyyy! You Won the game.')
+    }
+
+    else if (humanScore < computerScore)
+    {
+        console.log('YOU LOST! Stupid.')
+    }
+
+    else
+    {
+        console.log('This game was tie.')
+    }
+}
