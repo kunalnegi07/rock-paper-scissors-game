@@ -145,4 +145,5 @@ function declareResult()
     {
         console.log('This game was a Tie.')
     }
+    
 }
