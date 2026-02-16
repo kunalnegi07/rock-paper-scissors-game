@@ -4,9 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors-Game</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        .maincontainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .btns{
+            display: flex;
+            margin-top: 150px;
+            margin-bottom: 50px;
+            gap: 20px;
+        }
+        button{
+            height: 50px;
+            width: 100px;
+        }
+        .onscreen{
+            display: flex;
+            flex-direction: column;
+        }
+        #score{
+            font-size: 20px ;
+        }
+        #result{
+            font-size: 32px;
+        }
+
+    </style>
 </head>
 <body>
+     
+    <div class="maincontainer">
+        <div class="btns">
+            <button  class ="rock">Rock</button>
+            <button  class="paper">Paper</button>
+            <button  class="scissors">scissors</button>
+        </div>
+
+        <div class="onscreen">
+            <div id="outcome"></div>
+            <div id="score"></div>
+            <div id="result"></div>
+        </div>
+    
+    </div>
+    
     
 </body>
 </html>
