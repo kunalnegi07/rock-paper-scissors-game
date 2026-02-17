@@ -46,35 +46,35 @@ function playRound(humanChoice, computerChoice)
     if(humanChoice === computerChoice)
     {
         showOutcome('This round is tie.');
-        showScore(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+        showScore(`Player : ${humanScore}      Computer : ${computerScore}`);
     }
 
     else if (humanChoice === "rock" && computerChoice === "scissors")
     {
         showOutcome('You win! rock beats scissors.');
         humanScore += 1;
-        showScore(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+        showScore(`Player : ${humanScore}      Computer : ${computerScore}`);
     }  
 
     else if (humanChoice === "paper" && computerChoice === "rock")
     {
         showOutcome('You win! paper beats rock.');
         humanScore += 1;
-        showScore(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+        showScore(`Player : ${humanScore}      Computer : ${computerScore}`);
     }
 
     else if(humanChoice === "scissors" && computerChoice === "paper")
     {
         showOutcome('You win! scissors beats paper.');
         humanScore += 1;
-        showScore(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+        showScore(`Player : ${humanScore}      Computer : ${computerScore}`);
     }
 
     else
     {
         showOutcome(`You lose! ${computerChoice} beats ${humanChoice}.` );
         computerScore += 1;
-        showScore(`Human score is : ${humanScore} --- Computer score is : ${computerScore}`);
+        showScore(`Player : ${humanScore}      Computer : ${computerScore}`);
     }
 
 }
@@ -83,13 +83,13 @@ function playRound(humanChoice, computerChoice)
 function declareResult()
 {
     if(humanScore == 5 ){
-        showResult("You won the game!")
+        showResult("You won","won")
         for(const button of allbtns ){
             button.disabled = true;
         }
         gameOver();
     }else if(computerScore == 5){
-        showResult("You lost the game!")
+        showResult("You lost","lost")
         for(const btns of allbtns ){
             btns.disabled = true;
         }
@@ -100,7 +100,7 @@ function declareResult()
 }
 
 function gameOver(){
-    gameOverScreen.style.display = "block";
+    gameOverScreen.style.display = "flex";
     mainScreen.style.display = "none";
 }
 
@@ -116,7 +116,16 @@ function resetGame(){
     score.textContent = "";
     outcome.textContent = "";
 }
+function showResult(message,type){
+    result.textContent = message;
 
+    if(type==="won"){
+        result.style.color  = "#16a34a";
+    }
+    else if(type==="lost"){
+        result.style.color = "#dc2626";
+    }
+}
 
 
 let btn1 = document.querySelector(".rock");
@@ -143,16 +152,9 @@ const result = document.querySelector("#result");
 const score = document.querySelector("#score");
 const outcome = document.querySelector("#outcome")
 
-function showResult(message){
-    result.textContent = message;
-    result.style.color = "blue";
-}
 function showScore(message){
     score.textContent = message;
-    result.style.color = "blue";
 }
 function showOutcome(message){
     outcome.textContent = message;
-    result.style.color = "blue";
 }
-
