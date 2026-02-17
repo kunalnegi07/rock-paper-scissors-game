@@ -6,6 +6,9 @@
     <title>Rock-Paper-Scissors-Game</title>
     <script src="script.js" defer></script>
     <style>
+        html{
+        
+        }
         .maincontainer{
             display: flex;
             justify-content: center;
@@ -38,19 +41,30 @@
 <body>
      
     <div class="maincontainer">
-        <div class="btns">
-            <button  class ="rock">Rock</button>
-            <button  class="paper">Paper</button>
-            <button  class="scissors">scissors</button>
+        
+        <div class="mainscreen">
+            <div class="btns">
+                <button  class="buttons rock">Rock</button>
+                <button  class="buttons paper">Paper</button>
+                <button  class="buttons scissors">scissors</button>
+            </div>
+
+            <div class="onscreen">
+                <div id="outcome"></div>
+            </div>
+
         </div>
 
-        <div class="onscreen">
-            <div id="outcome"></div>
-            <div id="score"></div>
-            <div id="result"></div>
+        <div id="score"></div>
+        <div id="result"></div>
+
+        <div id="game-over-screen" style="display: none;">
+            <h1>Game over!</h1>
+            <button id="play-again">Play Again</button>
         </div>
     
     </div>
+
     
     
 </body>
