@@ -4,4 +4,4 @@ The game allows a user to play against the computer through browser prompts and 
 
 Live Preview for the project - https://kunalnegi07.github.io/rock-paper-scissors-game/
 
-Built with - HTML and JavaScript .
+Built with - HTML , CSS and JavaScript .
